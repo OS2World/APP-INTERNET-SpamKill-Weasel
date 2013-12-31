@@ -1,0 +1,58 @@
+;SpamKill.cfg file
+;blacklist usage=yes/no or 1/0
+blacklistuse=yes
+;blacklists (up to 4)
+;blacklist=your.cool.black.list
+blacklist=unconfirmed.dsbl.org
+blacklist=bl.spamcop.net
+blacklist=proxies.relays.monkeys.com
+blacklist=sbl.spamhaus.org
+;blacklist=relays.ordb.org 
+;***** Put your trusted hosts here
+trusted=123.123.123.1
+trusted=123.123.123.4
+trusted=123.123.111.0 255.255.255.0
+CopyGoodMail=yes
+GoodMailDir=GoodMail
+CopySpamMail=yes
+SpamMailDir=SpamMail
+relayMailBox=relaybox@YOURDOMAIN.ru 
+;домен, для которого принимаются письма в relayMailBox
+relayDomain=YOUR_RELAYDOMAIN.ru
+;список разрешенных пользователей для relayMailBox
+;пользователь должен быть либо в For: либо в Received ...for
+;все остальное = несуществующие пользователи
+relayUsersList=passwd
+;специальный адрес для спама на домен - почта на него не отвергается,
+;но адрес from используется для  последующих и удаления предыдущих писем
+;может быть до 64
+AddrForSpamList=spamaddr
+;файл со списком плохих слов в subj
+SubjWrongWordsFile=SpamWords.txt
+
+;файл с предысторией
+historyFile=SpamKill.dat
+;время хранения информации в historyFile, сек
+historyTime=36000
+
+;relative wights for                  
+weight.ToNEfor=1                      
+weight.ToEQundisclosed_recipients=1   
+weight.ContentTransferEncoding_base64=0.3                                      
+weight.MailToNonExistentUser=2.
+;weight of 1 WrongWord  in subj, total weight is summ
+weight.SubjWrongWord = 0.1
+;if mail is To: user@blabla and Subj: is  User or Re:User
+weight.SubjEqUser = 1
+weight.SubjEqRe = 0.1
+
+;external filter calls for test,register as spam, register as ham (no spam)
+;%s is place for filename
+ExtFilterTest=SpamClient -I %s
+ExtFilterRegAsSpam=SpamClient -s -I %s
+ExtFilterRegAsNoSpam=SpamClient -n -I %s
+;return codes for extfilter_test
+ExtFilterTestRcSpam=0 
+ExtFilterTestRcNoSpam=1
+ExtFilterMaxFsizeRegAsSpam = 102400
+ExtFilterMaxFsizeRegAsNoSpam =102400

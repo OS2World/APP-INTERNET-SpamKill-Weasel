@@ -1,0 +1,35 @@
+                          Upload Information Template for Hobbes.nmsu.edu
+                          ===============================================
+
+        Archive Filename: SpamKill.zip
+       Short Description: spam filter for Weasel  v.0.50 with src.
+                           
+
+        Long Description: stage 4 spam filter for Weasel, v.0.50, may be used with 
+                          SpamKill2(bogofilter) Bayesian spam filter. It use 4 
+                          technics to kill spam: (1) dns filtering on ordb.org -like 
+                          servers,(2) external [Bayesian] spam filter, (3) Using "spam 
+                          addresses" for external filter learning and (4) History for last NN sec.
+                          With src. 
+                          
+        
+      Proposed directory
+           for placement: /pub/os2/apps/internet/mail/server/
+
+               Your name: Evgeny Kotsuba 
+           Email address: evgen[at]os2russian.irc
+    Program contact name: (same)
+   Program contact email: (same)
+             Program URL: 
+
+      Would you like the
+   contact email address
+    included in listings? no
+
+Operating System/Version: OS/2 Warp etc.
+ Additional requirements: 
+
+                Replaces: /pub/os2/apps/internet/mail/server/SpamKill.zip
+
+
+
